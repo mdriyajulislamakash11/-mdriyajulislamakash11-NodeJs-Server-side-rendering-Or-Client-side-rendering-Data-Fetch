@@ -4,7 +4,7 @@ export const getDetail = async (id) => {
   return data;
 };
 
-const Page = async ({ params }) => {
+const PostDetails = async ({ params }) => {
   const p = await params;
 
   const postDetail = await getDetail(p.id);
@@ -22,4 +22,4 @@ const Page = async ({ params }) => {
   );
 };
 
-export default Page;
+export default PostDetails;
