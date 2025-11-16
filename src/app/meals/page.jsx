@@ -3,21 +3,24 @@
 
 import MealSearch from "./components/MealSearchInput";
 
-const page = () => {
-  const meals = [];
+const MealsPage = async ({ searchParams }) => {
+  const query = await searchParams;
+  console.log(query);
 
   const fetchMeals = async () => {
     try {
       const res = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${query.search}`
       );
       const data = await res.json();
       //   setMeals(data?.meals || []);
+      return data?.meals
     } catch (error) {
       console.log(error);
-      
     }
   };
+
+  const meals = await fetchMeals();
 
   return (
     <div className="p-8">
@@ -64,4 +67,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default MealsPage;
