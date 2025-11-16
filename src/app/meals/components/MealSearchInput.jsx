@@ -1,15 +1,20 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
+
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const mealSearch = () => {
-//   const [meals, setMeals] = useState([]);
+const MealSearchInput = () => {
+  //   const [meals, setMeals] = useState([]);
   const [search, setSearch] = useState("");
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
-  
+    const searchQuery = { search };
+    const urlQueryParam = new URLSearchParams(searchQuery);
+    const url = `${pathname}?${urlQueryParam}`;
+    router.push(url);
   }, [search]);
 
   return (
@@ -24,10 +29,8 @@ const mealSearch = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-
-
     </div>
   );
 };
 
-export default mealSearch;
+export default MealSearchInput;

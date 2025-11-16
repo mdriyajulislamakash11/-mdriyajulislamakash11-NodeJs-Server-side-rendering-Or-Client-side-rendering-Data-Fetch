@@ -1,10 +1,10 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @next/next/no-img-element */
 
-
+import MealSearch from "./components/MealSearchInput";
 
 const page = () => {
+  const meals = [];
 
   const fetchMeals = async () => {
     try {
@@ -12,19 +12,19 @@ const page = () => {
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
       );
       const data = await res.json();
-    //   setMeals(data?.meals || []);
+      //   setMeals(data?.meals || []);
     } catch (error) {
       console.log(error);
+      
     }
   };
-
-
 
   return (
     <div className="p-8">
       <h1 className="text-4xl font-bold text-center mb-8">Meal Recipes</h1>
+      {/* Meal Search Input */}
+      <MealSearch />
 
-  
       {/* Meals grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {meals?.map((meal) => (
@@ -40,7 +40,9 @@ const page = () => {
               />
             </figure>
             <div className="card-body">
-              <h2 className="card-title text-xl font-semibold">{meal.strMeal}</h2>
+              <h2 className="card-title text-xl font-semibold">
+                {meal.strMeal}
+              </h2>
               <p className="text-gray-600">Category: {meal.strCategory}</p>
               <p className="text-gray-600">Area: {meal.strArea}</p>
 
