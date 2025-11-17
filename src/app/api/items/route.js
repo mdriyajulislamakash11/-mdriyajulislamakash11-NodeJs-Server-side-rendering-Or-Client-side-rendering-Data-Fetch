@@ -10,4 +10,9 @@ export async function GET() {
 }
 
 
+export async function POST (req) {
+    const postData = await req.json()
+    const result = await dbConnect("practice_data").insertOne(postData)
 
+    return Response.json(result)
+}
