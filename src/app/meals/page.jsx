@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @next/next/no-img-element */
 
 import MealSearch from "./components/MealSearchInput";
@@ -14,7 +13,7 @@ const MealsPage = async ({ searchParams }) => {
       );
       const data = await res.json();
       //   setMeals(data?.meals || []);
-      return data?.meals
+      return data?.meals;
     } catch (error) {
       console.log(error);
     }
