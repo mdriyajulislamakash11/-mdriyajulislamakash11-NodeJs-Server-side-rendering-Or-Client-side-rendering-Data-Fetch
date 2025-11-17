@@ -31,7 +31,9 @@ export async function PATCH(req, { params }) {
 // Delete
 export async function DELETE(req, { params }) {
   const p = await params;
-  console.log(p);
+ const singleData = await dbConnect("practice_data").deleteOne({
+    _id: new ObjectId(p.id),
+  });
 
-  return Response.json({ params: p });
+  return Response.json(singleData);
 }
