@@ -2,6 +2,7 @@
 
 // get dynamic 
 export async function GET(req, { params }) {
+
   const p = await params;
   console.log(p);
 
@@ -10,6 +11,7 @@ export async function GET(req, { params }) {
 
 // Update 
 export async function PATCH(req, { params }) {
+
   const p = await params;
   console.log(p);
 
@@ -18,6 +20,7 @@ export async function PATCH(req, { params }) {
 
 // Delete
 export async function DELETE(req, { params }) {
+    
   const p = await params;
   console.log(p);
 
