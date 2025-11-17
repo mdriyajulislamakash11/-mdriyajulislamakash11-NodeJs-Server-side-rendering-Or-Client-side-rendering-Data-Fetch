@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import MealSearch from "./components/MealSearchInput";
+import Image from "next/image";
 
 const MealsPage = async ({ searchParams }) => {
   const query = await searchParams;
@@ -36,9 +37,11 @@ const MealsPage = async ({ searchParams }) => {
             className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300"
           >
             <figure>
-              <img
+              <Image
                 src={meal.strMealThumb}
                 alt={meal.strMeal}
+                width={400} 
+                height={400}
                 className="rounded-t-lg"
               />
             </figure>
@@ -63,9 +66,7 @@ const MealsPage = async ({ searchParams }) => {
 
                 {/* More Details... Button */}
                 <div>
-                  <Link href={`/meals/${meal.idMeal}`}>
-                    More Details...
-                  </Link>
+                  <Link href={`/meals/${meal.idMeal}`}>More Details...</Link>
                 </div>
               </div>
             </div>
