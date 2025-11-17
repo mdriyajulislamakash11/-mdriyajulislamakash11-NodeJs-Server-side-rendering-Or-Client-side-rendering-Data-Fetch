@@ -4,6 +4,21 @@ export const getDetail = async (id) => {
   return data;
 };
 
+// dynamic route je ase title take jeikhane dynamic vabe product er je name seita dekhiye dewya holo
+// Doc_Link: https://nextjs.org/docs/app/api-reference/functions/generate-metadata
+export async function generateMetadata({ params }) {
+  // read route params
+  const { id } = await params
+  // fetch data
+  const postDetail = await getDetail(id)
+  return {
+    title: postDetail.title,
+    description: postDetail.body,
+  } 
+}
+
+
+// Componets
 const PostDetails = async ({ params }) => {
   const p = await params;
 

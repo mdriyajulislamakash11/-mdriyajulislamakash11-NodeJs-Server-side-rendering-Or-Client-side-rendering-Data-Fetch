@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
+import Link from "next/link";
 import MealSearch from "./components/MealSearchInput";
 
 const MealsPage = async ({ searchParams }) => {
@@ -48,15 +49,24 @@ const MealsPage = async ({ searchParams }) => {
               <p className="text-gray-600">Category: {meal.strCategory}</p>
               <p className="text-gray-600">Area: {meal.strArea}</p>
 
-              <div className="card-actions mt-4">
-                <a
-                  href={meal.strYoutube}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary btn-sm"
-                >
-                  Watch Video
-                </a>
+              <div className="flex justify-between items-end">
+                <div className="card-actions mt-4">
+                  <a
+                    href={meal.strYoutube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary btn-sm"
+                  >
+                    Watch Video
+                  </a>
+                </div>
+
+                {/* More Details... Button */}
+                <div>
+                  <Link href={`/meals/${meal.idMeal}`}>
+                    More Details...
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
