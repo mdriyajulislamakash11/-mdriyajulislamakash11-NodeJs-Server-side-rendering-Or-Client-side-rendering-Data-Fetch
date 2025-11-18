@@ -9,15 +9,15 @@ const Navbar = () => {
 
   if (!pathname.includes("dashboard")) {
     return (
-      <nav className="w-full bg-white shadow">
+      <nav className="w-full bg-green-900 shadow">
         <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-semibold text-gray-800">
+          <Link href="/" className="text-2xl font-semibold text-white">
             MyWebsite
           </Link>
 
           {/* Desktop Menu */}
-          <ul className="hidden md:flex space-x-6 text-gray-700">
+          <ul className="hidden md:flex space-x-6 text-white">
             <li>
               <Link href="/">Home</Link>
             </li>
@@ -46,7 +46,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {open && (
-          <ul className="md:hidden bg-white shadow-lg p-4 space-y-3 text-gray-700">
+          <ul className="md:hidden bg-white shadow-lg p-4 space-y-3 text-white">
             <li>
               <Link href="/">Home</Link>
             </li>

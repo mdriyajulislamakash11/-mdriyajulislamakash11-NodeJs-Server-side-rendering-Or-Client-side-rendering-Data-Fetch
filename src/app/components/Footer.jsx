@@ -7,7 +7,7 @@ const Footer = () => {
 
   if (!pathname.includes("dashboard")) {
     return (
-      <footer className="bg-gray-100 text-gray-700 py-10 mt-10">
+      <footer className="bg-green-900 text-white py-10 mt-10">
         <div className="max-w-7xl mx-auto px-4 text-center">
           {/* Menu Links */}
           <div className="flex justify-center gap-6 flex-wrap mb-6">
