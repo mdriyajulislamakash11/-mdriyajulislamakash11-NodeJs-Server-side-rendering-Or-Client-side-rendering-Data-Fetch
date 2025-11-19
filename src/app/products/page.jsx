@@ -1,10 +1,14 @@
+import { redirect } from "next/navigation";
 import React from "react";
 
 const ProductsPage = async () => {
-  const res = await fetch(`http://localhost:3000/api/items`, {
-    cache: "force-cache"
-  });
+  const res = await fetch(`http://localhost:3000/api/items`);
   const data = await res.json();
+
+  // eta optional kore silam  data er length jodi 3 tar besi hoy tahole amk home page a niye jabe
+  // if(data.length > 3){
+  //   redirect("/")
+  // }
 
   return (
     <div>
