@@ -1,8 +1,8 @@
-import { redirect } from "next/navigation";
-import React from "react";
+// import { redirect } from "next/navigation";
+
 
 const ProductsPage = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/items`, {
+  const res = await fetch(`http://localhost:3000/api/items`, {
     cache: "force-cache",
   });
 
