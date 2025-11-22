@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 // import { Geist, Geist_Mono, poppins } from "next/font/google";
-import {  Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import NextAuthSessionProvider from "../provider/NextAuthSessionProvider"
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -18,7 +19,7 @@ import Footer from "./components/Footer";
 const poppins = Poppins({
   weight: ["400", "600", "700"],
   subsets: ["latin"],
-})
+});
 
 export const metadata: Metadata = {
   title: {
@@ -37,13 +38,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.className} antialiased`}
-      >
-        <Navbar />
-        <main className="min-h-[calc(100vh-320px)]">{children}</main>
-        <Footer />
-      </body>
+      <NextAuthSessionProvider>
+        <body className={`${poppins.className} antialiased`}>
+          <Navbar />
+          <main className="min-h-[calc(100vh-320px)]">{children}</main>
+          <Footer />
+        </body>
+      </NextAuthSessionProvider>
     </html>
   );
 }
