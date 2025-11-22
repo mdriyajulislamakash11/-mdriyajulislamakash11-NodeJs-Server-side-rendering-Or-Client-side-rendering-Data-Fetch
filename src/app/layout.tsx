@@ -4,7 +4,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import NextAuthSessionProvider from "../provider/NextAuthSessionProvider"
+import NextAuthSessionProvider from "../provider/NextAuthSessionProvider";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -16,7 +16,8 @@ import NextAuthSessionProvider from "../provider/NextAuthSessionProvider"
 //   subsets: ["latin"],
 // });
 
-// 1111111111
+// 1
+//2
 
 const poppins = Poppins({
   weight: ["400", "600", "700"],
